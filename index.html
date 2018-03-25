@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <script src="志愿者网二.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #000000;
+        }
+        ul li{
+            list-style: none;
+        }
+        .nav{
+            height: 57px;
+            background-color: #000000;
+            position: relative;
+            vertical-align: top;
+
+        }
+        /*标题*/
+        .nav-title{
+            color:green;
+            position: absolute;
+            left: 115px;
+            top: 11px;
+            font-size: 30px;
+
+        }
+
+        /*logo部分*/
+        .logo{
+            width: 100px;
+            height: 57px;
+            background: url("images/logo.jpg") no-repeat;
+            background-size: cover;
+        }
+
+        .nav-menu{
+            width: 600px;
+            position: absolute;
+            left: 460px;
+            top: 0px;
+        }
+        .nav-menu li{
+            float: left;
+            width: 70px;
+            line-height: 57px;
+            margin-left: 20px;
+            background-color: #000000;
+        }
+        .nav-menu li:nth-child(1){
+            width: 40px;
+            background-color: yellow;
+        }
+        .nav-menu li a{
+            color: #ffffff;
+        }
+        .nav-menu li:hover{
+            background-color: red;
+        }
+
+        /*登入注册部分*/
+        .nav-login,.nav-login li{
+            float: right;
+        }
+        .nav-login{
+            width: 80px;
+            margin-top: -38px;
+
+        }
+        .nav-login li a{
+            width: 40px;
+            color: #ffffff;
+        }
+        .nav-login-s{
+            width: 50px;
+            height: 90px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 1263px;
+            top: 20px;
+        }
+        .nav-login-s li{
+            width: 50px;
+            line-height: 30px;
+            text-align: center;
+            background-color: red;
+        }
+        ul.nav-login-s li:hover{
+            background-color: #fff;
+        }
+
+        /*头部*/
+        .header{
+            margin-left: 200px;
+            margin-top: 20px;
+            width: 1000px;
+            height: 250px;
+            background: url("images/header.jpg");
+        }
+
+        .con{
+            width: 100px;
+            height: 300px;
+            position: relative;
+        }
+        /*轮播图*/
+        .con-left{
+            margin-left: 200px;
+            width: 500px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        .con-left-u{
+            width:3000px;
+            height: 300px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            animation: sport 8s linear 0s infinite normal;
+        }
+        .con-left-u li{
+            float: left;
+        }
+        ul:hover{
+            animation-play-state: paused;
+            /*控制动画停止*/
+        }
+        @keyframes sport {
+            from{
+                left: 0px;
+            }
+            to{
+                left:-2500px;
+            }
+        }
+        /*主题栏*/
+        .con-right{
+            width: 450px;
+            height: 300px;
+            position: absolute;
+            left: 750px;
+            top: 0px;
+        }
+        .con-right ul{
+            width: 140px;
+            height: 300px;
+            float: left;
+            margin-left: 10px;
+        }
+        .con-right ul li{
+            width: 140px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 15px;
+            border-bottom: 1px solid #ffffff ;
+        }
+        .con-right ul li:hover{
+            background-color: #ffffff;
+        }
+
+
+        .con-right-u1{
+
+            background-color: #f87644;
+        }
+        .con-right-u2{
+            width: 140px;
+            height: 300px;
+            background-color: #97c934;
+        }
+        .con-right-u3{
+            width: 140px;
+            height: 300px;
+            background-color: #34b4f4;
+        }
+        /*志愿者导航*/
+        .con2{
+            width: 1000px;
+            height: 100px;
+            margin-left: 200px;
+            overflow: hidden;
+        }
+        .con2 div{
+            width: 330px;
+            height: 90px;
+            margin-top: 20px;
+            margin-right: 3px;
+            float: left;
+            background-color: #000000;
+        }
+        .con2-left{
+            background:url("images/aa.png");
+        }
+        .con2-mid{
+            background:url("images/bb.png");
+        }
+        .con2-right{
+            background:url("images/cc.png");
+        }
+        .con2 div:hover{
+            opacity:0.7;
+        }
+        .con-3{
+            width: 1000px;
+            height: 640px;
+            margin-top: 20px;
+            margin-left: 200px;
+            background-color: #eeeeee;
+            overflow: hidden;
+        }
+        .con-3-nav{
+            width: 1000px;
+            height: 35px;
+            margin-top: 25px;
+        }
+        .con-3-nav li{
+            width: 90px;
+            line-height: 35px;
+            text-align: center;
+            float: left;
+            margin-right: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+            transition: transform 0.1s linear 0s;
+        }
+        li.con-3-nav-aa{
+            background-color: red;
+        }
+        .con-3-nav li:hover{
+            background-color:red;
+            transform: scale(1.1,1.1);
+
+        }
+        .con-3-con{
+            width: 1000px;
+        }
+        .con-3-con li{
+            width: 225px;
+            height: 270px;
+            margin-right: 25px;
+            margin-top: 20px;
+            float: left;
+        }
+        .con-3-con li img{
+            width: 225px;
+            height: 163px;
+        }
+        .con-3-con li h4{
+            text-align: center;
+        }
+        .con-3-con li span{
+            display: inline-block;
+            margin-top: 30px;
+        }
+        .foot-1{
+            width: 1000px;
+            height: 35px;
+            margin-left: 200px;
+            margin-top: 20px;
+            background-color: #0b87c0;
+        }
+        .foot-2 table{
+            width: 1000px;
+            margin-left: 200px;
+        }
+        .foot-3{
+            width: 1000px;
+            height: 1px;
+            margin-left: 200px;
+            background-color: blue;
+            margin-top: 10px;
+        }
+        .foot-4{
+            width: 1000px;
+            height: 100px;
+            margin-left: 200px;
+            margin-top: 5px;
+            position: relative;
+        }
+        .foot-4 ul{
+            position: absolute;
+            left: 130px;
+            top: 0px;
+            width: 700px;
+        }
+        .foot-4 ul li{
+            width: 200px;
+            float: left;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo"></div>
+    <div class="nav-title">赣州志愿者网</div>
+    <ul class="nav-menu">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">志愿活动</a></li>
+        <li><a href="#">志愿组织</a></li>
+        <li><a href="#">时长公示</a></li>
+        <li><a href="#">志愿者证</a></li>
+        <li><a href="#">帮助中心</a></li>
+    </ul>
+
+    <ul class="nav-login">
+        <li><a href="注册.html">注册</a></li>
+        <li id="login"><a href="">登入|</a></li>
+    </ul>
+    <ul class="nav-login-s" id="nav-login-s" style="display: none;">
+      <li><a href="登入页面.html"> 账号 </a></li>
+      <li><a href=""> QQ  </a> </li>
+      <li><a href=""> 微博 </a></li>
+    </ul>
+</div>
+<div class="header"></div>
+<div class="con">
+    <div class="con-left">
+        <ul class="con-left-u">
+            <li><img src="images/1.jpg"/></li>
+            <li><img src="images/2.jpg"/></li>
+            <li><img src="images/3.jpg"/></li>
+            <li><img src="images/4.jpg"/></li>
+            <li><img src="images/5.jpg"/></li>
+            <li><img src="images/1.jpg"/></li>
+        </ul>
+    </div>
+    <div class="con-right">
+        <ul class="con-right-u1">
+            <li><a href="">寻求志愿者帮助</a></li>
+            <li><a href="">注册成为志愿者</a></li>
+            <li><a href="">社区志愿者服务中心</a></li>
+        </ul>
+        <ul class="con-right-u2">
+            <li><a href="">实名注册</a></li>
+            <li><a href="">在线培训</a></li>
+            <li><a href="">参加志愿团体</a></li>
+            <li><a href="">参加志愿者项目</a></li>
+            <li><a href="">记录时间</a></li>
+            <li><a href="">下载志愿者服务证书</a></li>
+        </ul>
+        <ul class="con-right-u3">
+            <li><a href="">团体注册</a></li>
+            <li><a href="">发布志愿者项目</a></li>
+            <li><a href="">招募志愿者</a></li>
+            <li><a href="">评价志愿者</a></li>
+        </ul>
+    </div>
+</div>
+<div class="con2">
+    <a href="#"><div class="con2-left"></div></a>
+    <a href="#"><div class="con2-mid"></div></a>
+    <a href="#"><div class="con2-right"></div></a>
+</div>
+<div class="con-3">
+    <ul class="con-3-nav" id="con-3-nav">
+        <li class="con-3-nav-aa"><a href="#1">活动推荐</a></li>
+        <li><a href="#1">青少年服务</a></li>
+        <li><a href="#1">敬老助残</a></li>
+        <li><a href="#1">扶贫帮困</a></li>
+        <li><a href="#1">文明礼仪</a></li>
+        <li><a href="#1">平安守护</a></li>
+        <li><a href="#1">环境保护</a></li>
+        <li><a href="#1">文化体育</a></li>
+        <li><a href="#1">便民服务</a></li>
+        <li><a href="#1">其他</a></li>
+    </ul>
+    <div id="aa">
+        <ul class="con-3-con" style="display: block">
+            <li><a href="#"><img src="images/con-1.png" /></a>
+                <h4>“小书传大爱”图书义卖活动</h4>
+                        <span>
+                            <p>地点：章贡区</p>
+                            <p>开始时间：2017-8-9</p>
+                        </span>
+            </li>
+            <li><a href="#"><img src="images/con-2.png" /></a>
+                <h4>“依旧情深”旧衣回收活动</h4>
+                        <span>
+                            <p>地点：章贡区</p>
+                            <p>开始时间：2017-9-5</p>
+                        </span>
+            </li>
+            <li><a href="#"><img src="images/con-3.png" /></a>
+                <h4>“让爱心扬帆”旧衣回收活动</h4>
+                        <span>
+                            <p>地点：章贡区</p>
+                            <p>开始时间：2017-6-5</p>
+                        </span>
+            </li>
+            <li><a href="#"><img src="images/con-4.png" /></a>
+                <h4>“正善素缘”爱心用快餐活动</h4>
+                        <span>
+                            <p>地点：章贡区</p>
+                            <p>开始时间：2017-8-14</p>
+                        </span>
+            </li>
+            <li><a href="#"><img src="images/con-5.png" /></a>
+                <h4>“启智”活动</h4>
+                        <span>
+                            <p>地点：章贡区</p>
+                            <p>开始时间：2017-6-4</p>
+                        </span>
+            </li>
+            <li><a href="#"><img src="images/con-6.png" /></a>
+                <h4>助残志愿者服务活动</h4>
+                        <span>
+                            <p>地点：章贡区</p>
+                            <p>开始时间：2017-7-23</p>
+                        </span>
+            </li>
+            <li><a href="#"><img src="images/con-7.png" /></a>
+                <h4>创文清洁活动</h4>
+                        <span>
+                            <p>地点：章贡区</p>
+                            <p>开始时间：2017-11-3</p>
+                        </span>
+            </li>
+            <li><a href="#"><img src="images/con-8.png" /></a>
+                <h4>急救培训活动</h4>
+                        <span>
+                            <p>地点：章贡区</p>
+                            <p>开始时间：2017-10-10</p>
+                        </span>
+            </li>
+        </ul>
+        <ul class="con-3-con" style="display: none">
+            <li><a href="#"><img src="images/con-1.png" /></a>
+                <h4>“小书传大爱”图书义卖活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-9</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-7.png" /></a>
+                <h4>创文清洁活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-11-3</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-2.png" /></a>
+                <h4>“依旧情深”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-9-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-4.png" /></a>
+                <h4>“正善素缘”爱心用快餐活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-14</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-3.png" /></a>
+                <h4>“让爱心扬帆”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-5.png" /></a>
+                <h4>“启智”活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-4</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-6.png" /></a>
+                <h4>助残志愿者服务活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-7-23</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-8.png" /></a>
+                <h4>急救培训活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-10-10</p>
+                    </span>
+            </li>
+        </ul>
+        <ul class="con-3-con" style="display: none">
+            <li><a href="#"><img src="images/con-1.png" /></a>
+                <h4>“小书传大爱”图书义卖活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-9</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-3.png" /></a>
+                <h4>“让爱心扬帆”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-2.png" /></a>
+                <h4>“依旧情深”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-9-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-4.png" /></a>
+                <h4>“正善素缘”爱心用快餐活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-14</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-5.png" /></a>
+                <h4>“启智”活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-4</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-6.png" /></a>
+                <h4>助残志愿者服务活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-7-23</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-7.png" /></a>
+                <h4>创文清洁活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-11-3</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-8.png" /></a>
+                <h4>急救培训活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-10-10</p>
+                    </span>
+            </li>
+        </ul>
+        <ul class="con-3-con" style="display: none">
+            <li><a href="#"><img src="images/con-1.png" /></a>
+                <h4>“小书传大爱”图书义卖活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-9</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-7.png" /></a>
+                <h4>创文清洁活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-11-3</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-2.png" /></a>
+                <h4>“依旧情深”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-9-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-4.png" /></a>
+                <h4>“正善素缘”爱心用快餐活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-14</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-3.png" /></a>
+                <h4>“让爱心扬帆”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-5.png" /></a>
+                <h4>“启智”活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-4</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-6.png" /></a>
+                <h4>助残志愿者服务活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-7-23</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-8.png" /></a>
+                <h4>急救培训活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-10-10</p>
+                    </span>
+            </li>
+        </ul>
+        <ul class="con-3-con" style="display: none">
+            <li><a href="#"><img src="images/con-1.png" /></a>
+                <h4>“小书传大爱”图书义卖活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-9</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-2.png" /></a>
+                <h4>“依旧情深”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-9-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-5.png" /></a>
+                <h4>“启智”活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-4</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-4.png" /></a>
+                <h4>“正善素缘”爱心用快餐活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-14</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-7.png" /></a>
+                <h4>创文清洁活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-11-3</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-3.png" /></a>
+                <h4>“让爱心扬帆”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-5</p>
+                    </span>
+            </li>
+
+            <li><a href="#"><img src="images/con-6.png" /></a>
+                <h4>助残志愿者服务活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-7-23</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-8.png" /></a>
+                <h4>急救培训活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-10-10</p>
+                    </span>
+            </li>
+        </ul>
+        <ul class="con-3-con" style="display: none">
+            <li><a href="#"><img src="images/con-1.png" /></a>
+                <h4>“小书传大爱”图书义卖活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-9</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-7.png" /></a>
+                <h4>创文清洁活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-11-3</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-2.png" /></a>
+                <h4>“依旧情深”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-9-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-4.png" /></a>
+                <h4>“正善素缘”爱心用快餐活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-14</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-5.png" /></a>
+                <h4>“启智”活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-4</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-6.png" /></a>
+                <h4>助残志愿者服务活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-7-23</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-8.png" /></a>
+                <h4>急救培训活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-10-10</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-3.png" /></a>
+                <h4>“让爱心扬帆”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-5</p>
+                    </span>
+            </li>
+        </ul>
+        <ul class="con-3-con" style="display: none">
+            <li><a href="#"><img src="images/con-1.png" /></a>
+                <h4>“小书传大爱”图书义卖活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-9</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-7.png" /></a>
+                <h4>创文清洁活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-11-3</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-2.png" /></a>
+                <h4>“依旧情深”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-9-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-4.png" /></a>
+                <h4>“正善素缘”爱心用快餐活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-14</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-3.png" /></a>
+                <h4>“让爱心扬帆”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-5.png" /></a>
+                <h4>“启智”活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-4</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-6.png" /></a>
+                <h4>助残志愿者服务活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-7-23</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-8.png" /></a>
+                <h4>急救培训活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-10-10</p>
+                    </span>
+            </li>
+        </ul>
+        <ul class="con-3-con" style="display: none">
+            <li><a href="#"><img src="images/con-1.png" /></a>
+                <h4>“小书传大爱”图书义卖活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-9</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-7.png" /></a>
+                <h4>创文清洁活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-11-3</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-8.png" /></a>
+                <h4>急救培训活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-10-10</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-4.png" /></a>
+                <h4>“正善素缘”爱心用快餐活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-14</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-3.png" /></a>
+                <h4>“让爱心扬帆”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-5.png" /></a>
+                <h4>“启智”活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-4</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-2.png" /></a>
+                <h4>“依旧情深”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-9-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-6.png" /></a>
+                <h4>助残志愿者服务活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-7-23</p>
+                    </span>
+            </li>
+        </ul>
+        <ul class="con-3-con" style="display: none">
+            <li><a href="#"><img src="images/con-2.png" /></a>
+                <h4>“依旧情深”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-9-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-1.png" /></a>
+                <h4>“小书传大爱”图书义卖活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-9</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-7.png" /></a>
+                <h4>创文清洁活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-11-3</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-5.png" /></a>
+                <h4>“启智”活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-4</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-4.png" /></a>
+                <h4>“正善素缘”爱心用快餐活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-14</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-3.png" /></a>
+                <h4>“让爱心扬帆”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-6.png" /></a>
+                <h4>助残志愿者服务活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-7-23</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-8.png" /></a>
+                <h4>急救培训活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-10-10</p>
+                    </span>
+            </li>
+        </ul>
+        <ul class="con-3-con" style="display: none">
+            <li><a href="#"><img src="images/con-1.png" /></a>
+                <h4>“小书传大爱”图书义卖活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-9</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-2.png" /></a>
+                <h4>“依旧情深”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-9-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-4.png" /></a>
+                <h4>“正善素缘”爱心用快餐活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-8-14</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-7.png" /></a>
+                <h4>创文清洁活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-11-3</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-5.png" /></a>
+                <h4>“启智”活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-4</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-6.png" /></a>
+                <h4>助残志愿者服务活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-7-23</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-3.png" /></a>
+                <h4>“让爱心扬帆”旧衣回收活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-6-5</p>
+                    </span>
+            </li>
+            <li><a href="#"><img src="images/con-8.png" /></a>
+                <h4>急救培训活动</h4>
+                    <span>
+                        <p>地点：章贡区</p>
+                        <p>开始时间：2017-10-10</p>
+                    </span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="foot-1">快速通道</div>
+<div class="foot-2">
+    <table >
+        <tr>
+            <td><a href="#">工作邮箱</a></td>
+            <td><a href="#">注册查询</a></td>
+            <td><a href="#">组织查询</a></td>
+            <td><a href="#">常见问题</a></td>
+            <td><a href="#">使用宝典</a></td>
+            <td><a href="#">VI手册</a></td>
+        </tr>
+        <tr>
+            <td><a href="#">资 料 库</a></td>
+            <td><a href="#">微 博</a></td>
+            <td><a href="#">实事项目</a></td>
+            <td><a href="#">保险理赔</a></td>
+            <td><a href="#">我要投诉</a></td>
+            <td><a href="#">志愿地图</a></td>
+        </tr>
+    </table>
+</div>
+<div class="foot-3"></div>
+<div class="foot-4">
+    <div style="margin-left: 50px;">友情链接：</div>
+    <ul>
+        <li><a href="">江西理工大学</a></li>
+        <li><a href="">赣南医学院</a></li>
+        <li><a href="">赣南师范大学</a></li>
+    </ul>
+</div>
+
+</body>
+</html>
